@@ -1,0 +1,18 @@
+body {
+    font-family: cursive;
+    font-size: 10px;
+    background-color: mintcream;
+    color: #001127;
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    color: #7d008b;
+}
+
+h2 {
+    text-indent: 256px;
+    font-size: 20px;
+    color: #6d00cc;
+}
