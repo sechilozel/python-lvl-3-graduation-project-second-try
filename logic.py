@@ -10,7 +10,7 @@ class DB_Manager:
         conn = sqlite3.connect(self.database)
         with conn:
             cur = conn.cursor()
-            cur.execute("SELECT * FROM characters WHERE name = ?", (name,))
+            cur.execute("SELECT * FROM characters WHERE name = %?%", (name,))
             return cur.fetchall()
     
     #FILTER BY SURNAME
@@ -18,7 +18,7 @@ class DB_Manager:
         conn = sqlite3.connect(self.database)
         with conn:
             cur = conn.cursor()
-            cur.execute("SELECT * FROM characters WHERE surname = ?", (surname,))
+            cur.execute("SELECT * FROM characters WHERE surname = %?%", (surname,))
             return cur.fetchall()
     
     #FILTER BY FAMILY
@@ -26,7 +26,7 @@ class DB_Manager:
         conn = sqlite3.connect(self.database)
         with conn:
             cur = conn.cursor()
-            cur.execute("SELECT * FROM characters WHERE family = ?", (family,))
+            cur.execute("SELECT * FROM characters WHERE family = %?%", (family,))
             return cur.fetchall()
     
     #FILTER BY NATION
@@ -34,7 +34,7 @@ class DB_Manager:
         conn = sqlite3.connect(self.database)
         with conn:
             cur = conn.cursor()
-            cur.execute("SELECT * FROM characters WHERE nation = ?", (nation,))
+            cur.execute("SELECT * FROM characters WHERE nation = %?%", (nation,))
             return cur.fetchall()
     
     #FILTER BY RACE
@@ -42,7 +42,7 @@ class DB_Manager:
         conn = sqlite3.connect(self.database)
         with conn:
             cur = conn.cursor()
-            cur.execute("SELECT * FROM characters WHERE race = ?", (race,))
+            cur.execute("SELECT * FROM characters WHERE race = ?%", (race,))
             return cur.fetchall()
     
     #FILTER BY LINEAGE
@@ -50,7 +50,7 @@ class DB_Manager:
         conn = sqlite3.connect(self.database)
         with conn:
             cur = conn.cursor()
-            cur.execute("SELECT * FROM characters WHERE lineage = ?", (lineage,))
+            cur.execute("SELECT * FROM characters WHERE lineage = %?%", (lineage,))
             return cur.fetchall()
     
     #FILTER BY MAGIC RATE (minimum)
