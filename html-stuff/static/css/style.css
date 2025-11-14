@@ -21,22 +21,37 @@ h2 {
 .btn-group {
   display: flex;
   flex-direction: column;
-  position: absolute; bottom: 0px;
+  position: bottom 0px;
 }
 
 button {
-    margin-left: 256px;
-    margin-right: 256px;
-    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
     font-size: 15px;
     background-color: #35008b;
     color: white;
     border: color(#001127);
     padding: 10px 20px;
+    width: 300px;
     cursor: pointer;
     border-radius: 12px;
 }
 
 button:hover {
     background-color: #6d00cc;
+}
+
+table { 
+    border-collapse: collapse; width: 50%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th, td {
+     border: 1px solid #8687bd; padding: 8px; text-align: middle; 
+}
+
+th {
+     background-color: #a970b8;
 }

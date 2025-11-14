@@ -4,10 +4,27 @@
     <title>Characters | The 13th Winter Fairy</title>
 
     <link rel="stylesheet" href="../static/css/style.css">
+
 </head>
 <body>
     <h1>The 13th Winter Fairy Official</h1>
     <h2>| Characters</h2>
+
+    <table>
+        <tr>
+            <th>Name</th><th>Surname</th><th>Family</th><th>Nation</th>
+            <th>Race</th><th>Lineage</th><th>Magic Rate</th>
+        </tr>
+        {% for character in characters %}
+        <tr>
+            {% for field in character %}
+            <td>{{ field }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+
     <div class="btn-group">
         <button onclick="location.href='/sbyname'">Search by Name</button>
         <button onclick="location.href='/sbysurname'">Search by Surname</button>

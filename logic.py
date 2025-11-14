@@ -67,3 +67,6 @@ class DB_Manager:
             cur = conn.cursor()
             cur.execute("SELECT * FROM characters WHERE magicrate <= ?", (magicrate,))
             return cur.fetchall()
+
+if __name__ == '__main__':
+    manager = DB_Manager(DATABASE)
