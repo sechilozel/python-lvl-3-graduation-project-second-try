@@ -17,6 +17,16 @@ h2 {
     color: #6d00cc;
 }
 
+h3 {
+    text-align: center;
+    font-size: 18px;
+    color: #f700ff;
+}
+
+mark {
+    background-color: #9a86ff;
+    color: #000000;
+}
 
 .btn-group {
   display: flex;
@@ -42,6 +52,15 @@ button:hover {
     background-color: #6d00cc;
 }
 
+button:disabled {
+    background-color: #8059c0;
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    background-color: #65439b;
+}
+
 table { 
     border-collapse: collapse; width: 50%; 
     margin-left: auto;
@@ -54,4 +73,29 @@ th, td {
 
 th {
      background-color: #a970b8;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+input[type="text"],
+input[type="search"] {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: 1px solid #8687bd;
+    border-radius: 8px;
+    width: 300px;
+    font-family: cursive;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus {
+    outline: none;
+    border-color: #7d008b;
+    box-shadow: 0 0 5px rgba(125, 0, 139, 0.3);
 }

@@ -9,6 +9,25 @@
     <h1>The 13th Winter Fairy Official</h1>
     <h2>| Characters -> Search Character by Surname</h2>
 
+    <form method="POST">
+        <input type="text" name="surname" placeholder="Search by surname..." required>
+        <button type="submit">Search</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>Name</th><th>Surname</th><th>Family</th><th>Nation</th>
+            <th>Race</th><th>Lineage</th><th>Magic Rate</th>
+        </tr>
+        {% for character in characters %}
+        <tr>
+            {% for field in character %}
+            <td>{{ field }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
     <div class="btn-group">
         <button onclick="location.href='/'">Go Back</button>
         <button onclick="location.href='/sbyname'">Search by Name</button>
