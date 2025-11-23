@@ -99,3 +99,28 @@ input[type="search"]:focus {
     border-color: #7d008b;
     box-shadow: 0 0 5px rgba(125, 0, 139, 0.3);
 }
+
+input[type="number"] {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: 1px solid #8687bd;
+    border-radius: 8px;
+    width: 320px;
+    font-family: cursive;
+}
+
+label {
+    padding: 10px 15px;
+    font-size: 14px;
+    width: 320px;
+    font-family: cursive;
+}
+
+select {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: 1px solid #8687bd;
+    border-radius: 8px;
+    width: 320px;
+    font-family: cursive;
+}
