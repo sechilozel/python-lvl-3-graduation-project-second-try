@@ -10,7 +10,8 @@
     <h2>| Characters -> Search Character by Name</h2>
 
     <form method="POST">
-        <input type="text" name="name" placeholder="Search by name..." required>
+        <label for="magicrate">Maximum Magic Rate:</label>
+        <input type="number" step="0.1" name="magicrate" placeholder="Search by magic rate..." min="0.0" max="5.0" required>
         <button type="submit">Search</button>
     </form>
 
@@ -30,12 +31,12 @@
 
     <div class="btn-group">
         <button onclick="location.href='/'">Go Back</button>
+        <button onclick="location.href='/sbyname'">Search by Name</button>
         <button onclick="location.href='/sbysurname'">Search by Surname</button>
         <button onclick="location.href='/sbyfamily'">Search by Family</button>
         <button onclick="location.href='/sbynation'">Search by Nation</button>
         <button onclick="location.href='/sbyrace'">Search by Race</button>
         <button onclick="location.href='/sbylineage'">Search by Lineage</button>
-        <button onclick="location.href='/sbymagicrate'" >Search by Magic Rate</button>
     </div>
 </body>
 </html>

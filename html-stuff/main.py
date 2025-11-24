@@ -143,6 +143,38 @@ def sbylineage():
     conn.close()
     return render_template('lineagebutton.html', characters=characters)
 
+@app.route("/sbymagicrate", methods=["GET", "POST"])
+def sbymagicrate():
+    conn = sqlite3.connect('characters.db')
+    cur = conn.cursor()
+    if request.method == 'POST':
+        magicrate_query = request.form['magicrate']
+        cur.execute("""
+            SELECT name, surname, family, nation, race, lineage, magicrate
+            FROM characters
+            WHERE magicrate <= ?
+        """, (magicrate_query,))
+    else:
+        cur.execute("""
+            SELECT name, surname, family, nation, race, lineage, magicrate
+            FROM characters
+        """)
+    characters = cur.fetchall()
+    conn.close()
+    return render_template('magicbutton.html', characters=characters)
+
+@app.route("/seethelist")
+def seethelist():
+    conn = sqlite3.connect('characters.db')
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT name, surname, family, nation, race, lineage, magicrate
+        FROM characters
+    """)
+    characters = cur.fetchall()
+    conn.close()
+    return render_template('charlist.html', characters=characters)
+
 @app.route("/addcharacter", methods=["GET", "POST"])
 def addcharacter():
     if request.method == 'POST':
