@@ -62,7 +62,10 @@ button:disabled:hover {
 }
 
 table { 
-    border-collapse: collapse; width: 50%; 
+    border-collapse: collapse; 
+    width: 50%; 
+    text-align: center;
+    /* font-size: ; */
     margin-left: auto;
     margin-right: auto;
 }
