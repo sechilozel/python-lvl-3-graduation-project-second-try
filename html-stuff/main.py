@@ -25,8 +25,8 @@ def sbyname():
             WHERE name LIKE ? 
             ORDER BY name ASC
         """, ('%' + name_query + '%',))
-        if name_query not in [row[0] for row in cur.fetchall()]:
-            return render_template('error.html')
+        # if name_query not in [row[0] for row in cur.fetchall()]:
+        #     return render_template('error.html')
     else:
         cur.execute("""
             SELECT name, surname, family, nation, race, lineage, magicrate
@@ -51,8 +51,8 @@ def sbysurname():
             WHERE surname LIKE ?
             ORDER BY surname ASC
         """, ('%' + surname_query + '%',))
-        if surname_query not in [row[1] for row in cur.fetchall()]:
-            return render_template('error.html')
+        # if surname_query not in [row[1] for row in cur.fetchall()]:
+        #     return render_template('error.html')
     else:
         cur.execute("""
             SELECT name, surname, family, nation, race, lineage, magicrate
@@ -76,8 +76,8 @@ def sbyfamily():
             WHERE family LIKE ?
             ORDER BY family ASC
         """, ('%' + family_query + '%',))
-        if family_query not in [row[2] for row in cur.fetchall()]:
-            return render_template('error.html')
+        # if family_query not in [row[2] for row in cur.fetchall()]:
+        #     return render_template('error.html')
     else:
         cur.execute("""
             SELECT name, surname, family, nation, race, lineage, magicrate
@@ -101,8 +101,8 @@ def sbynation():
             WHERE nation LIKE ?
             ORDER BY nation ASC
         """, ('%' + nation_query + '%',))
-        if nation_query not in [row[3] for row in cur.fetchall()]:
-            return render_template('error.html')
+        # if nation_query not in [row[3] for row in cur.fetchall()]:
+        #     return render_template('error.html')
     else:
         cur.execute("""
             SELECT name, surname, family, nation, race, lineage, magicrate
@@ -126,8 +126,8 @@ def sbyrace():
             WHERE race = ?
             ORDER BY race ASC
         """, (race_query,))
-        if race_query not in [row[4] for row in cur.fetchall()]:
-            return render_template('error.html')
+        # if race_query not in [row[4] for row in cur.fetchall()]:
+        #     return render_template('error.html')
     else:
         cur.execute("""
             SELECT name, surname, family, nation, race, lineage, magicrate
@@ -151,8 +151,8 @@ def sbylineage():
             WHERE lineage LIKE ?
             ORDER BY lineage ASC
         """, ('%' + lineage_query + '%',))
-        if lineage_query not in [row[5] for row in cur.fetchall()]:
-            return render_template('error.html')
+        # if lineage_query not in [row[5] for row in cur.fetchall()]:
+        #     return render_template('error.html')
     else:
         cur.execute("""
             SELECT name, surname, family, nation, race, lineage, magicrate
