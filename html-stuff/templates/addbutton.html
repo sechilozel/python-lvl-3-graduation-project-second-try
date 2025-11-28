@@ -12,33 +12,38 @@
     <h2>| Add a Character</h2>
 
     <h3>WARNING: This form is to add <mark>CANON CHARACTERS who are NOT IN THE LIST</mark></h3>
+    <!-- RACE and LINEAGE information -->
+    
 
     <form method="POST">
         <input type="text" name="name" placeholder="Name" required>
         <input type="text" name="surname" placeholder="Surname" required>
         <input type="text" name="family" placeholder="Family" required>
         <input type="text" name="nation" placeholder="Nation" required>
-        
-        <label for = "lineage">Lineage:</label>
-        <select name="lineage" required> <!-- Anormal/Noramal/Normal -->
-            <option selected disabled value="">Select Lineage</option>
-            <option value="Anormal">Anormal</option>
-            <option value="Noramal">Noramal</option>
-            <option value="Normal">Normal</option>
-        </select>
+
+        <h4>ANORMAL: Fairy, Angel, Royal, Demon, Magician</h4>
+        <h4>NORAMAL: Kinoto, Wizard</h4>
+        <h4>NORMAL : Human</h4>
 
         <label for="race">Race:</label>
-        <select id="race" name="race" required></select>
-            <option selected disabled value="">Select Race</option>
-            <option value="Angel">Angel</option>
-            <option value="Demon">Demon</option>
-            <option value="Fairy">Fairy</option>
-            <option value="Human">Human</option>
-            <option value="Kinoto">Kinoto</option>
-            <option value="Magician">Magician</option>
-            <option value="Royal">Royal</option>
-            <option value="Wizard">Wizard</option>
-        </select>
+        <select name="race" onchange="this.form.submit()">
+            <option value="">Select Race</option>
+            {% for race in races %}
+                <option value="{{ race }}" {% if race == selected_race %}selected{% endif %}>{{ race }}</option>
+            {% endfor %}
+        </select><br>
+
+
+        <label>Lineage:</label>
+        <select name="lineage">
+            <option value="">Select Lineage</option>
+            {% for lineage in lineage_choices %}
+                <option value="{{ lineage }}">{{ lineage }}</option>
+            {% endfor %}
+        </select><br>
+
+
+        
         <!-- <input type="text" name="race" placeholder="Race" required>
         <input type="text" name="lineage" placeholder="Lineage" required> -->
         <input type="number" step="0.1" name="magicrate" placeholder="Magic Rate" min="0.0" max="5.0" required>

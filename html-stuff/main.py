@@ -216,34 +216,7 @@ LINEAGE_OPTIONS = {
 
 @app.route("/addcharacter", methods=["GET", "POST"])
 def addcharacter():
-    if request.method == 'POST':
-            name = request.form['name']
-            surname = request.form['surname']
-            family = request.form['family']
-            nation = request.form['nation']
-            race = request.form['race']
-            lineage = request.form['lineage']
-            magicrate = request.form['magicrate']
-            conn = sqlite3.connect('characters.db')
-            cur = conn.cursor()
-            cur.execute("""
-                INSERT INTO characters (name, surname, family, nation, race, lineage, magicrate)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
-            """, (name, surname, family, nation, race, lineage, magicrate))
-            conn.commit()
-            conn.close()
-            return redirect(url_for('mainpage'))
-    
-    return render_template('addbutton.html')
-
-    # selected_race = None
-    # lineage_choices = []
-
     # if request.method == 'POST':
-    #     selected_race = request.form.get('race')
-    #     lineage_choices = LINEAGE_OPTIONS.get(selected_race, [])
-
-    #     if request.form.get('lineage'):
     #         name = request.form['name']
     #         surname = request.form['surname']
     #         family = request.form['family']
@@ -261,9 +234,36 @@ def addcharacter():
     #         conn.close()
     #         return redirect(url_for('mainpage'))
     
-    # return render_template('addbutton.html',
-    #                        races=LINEAGE_OPTIONS.keys(),
-    #                        selected_race=selected_race,
-    #                        lineage_choices=lineage_choices)
+    # return render_template('addbutton.html')
+
+    selected_race = None
+    lineage_choices = []
+
+    if request.method == 'POST':
+        selected_race = request.form.get('race')
+        lineage_choices = LINEAGE_OPTIONS.get(selected_race, [])
+
+        if request.form.get('lineage'):
+            name = request.form['name']
+            surname = request.form['surname']
+            family = request.form['family']
+            nation = request.form['nation']
+            race = request.form['race']
+            lineage = request.form['lineage']
+            magicrate = request.form['magicrate']
+            conn = sqlite3.connect('characters.db')
+            cur = conn.cursor()
+            cur.execute("""
+                INSERT INTO characters (name, surname, family, nation, race, lineage, magicrate)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+            """, (name, surname, family, nation, race, lineage, magicrate))
+            conn.commit()
+            conn.close()
+            return redirect(url_for('mainpage'))
+    
+    return render_template('addbutton.html',
+                           races=LINEAGE_OPTIONS.keys(),
+                           selected_race=selected_race,
+                           lineage_choices=lineage_choices)
 
 app.run(debug=True)

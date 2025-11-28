@@ -2,6 +2,10 @@ body {
     font-family: cursive;
     font-size: 10px;
     background-color: mintcream;
+    background-image: url("bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #001127;
 }
 
@@ -21,6 +25,13 @@ h3 {
     text-align: center;
     font-size: 18px;
     color: #f700ff;
+}
+
+h4 {
+    text-align: left;
+    font-size: 16px;
+    color: #9a86ff;
+    margin: 0;
 }
 
 mark {
