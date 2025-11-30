@@ -36,6 +36,8 @@ def sbyname():
 
     characters = cur.fetchall()
     conn.close()
+    if not characters:
+        return render_template('namebutton.html', error = "No characters found.")
     return render_template('namebutton.html', characters=characters)
 
 
@@ -62,6 +64,8 @@ def sbysurname():
 
     characters = cur.fetchall()
     conn.close()
+    if not characters:
+        return render_template('surnamebutton.html', error = "No characters found.")
     return render_template('surnamebutton.html', characters=characters)
 
 @app.route("/sbyfamily", methods=["GET", "POST"])
@@ -87,6 +91,8 @@ def sbyfamily():
 
     characters = cur.fetchall()
     conn.close()
+    if not characters:
+        return render_template('familybutton.html', error = "No characters found.")
     return render_template('familybutton.html', characters=characters)
 
 @app.route("/sbynation", methods=["GET", "POST"])
@@ -112,6 +118,8 @@ def sbynation():
 
     characters = cur.fetchall()
     conn.close()
+    if not characters:
+        return render_template('nationbutton.html', error = "No characters found.")
     return render_template('nationbutton.html', characters=characters)
 
 @app.route("/sbyrace", methods=["GET", "POST"])
@@ -137,6 +145,8 @@ def sbyrace():
 
     characters = cur.fetchall()
     conn.close()
+    if not characters:
+        return render_template('racebutton.html', error = "No characters found.")
     return render_template('racebutton.html', characters=characters)
 
 @app.route("/sbylineage", methods=["GET", "POST"])
@@ -162,6 +172,8 @@ def sbylineage():
 
     characters = cur.fetchall()
     conn.close()
+    if not characters:
+        return render_template('lineagebutton.html', error = "No characters found.")
     return render_template('lineagebutton.html', characters=characters)
 
 @app.route("/sbymagicrate", methods=["GET", "POST"])
@@ -193,6 +205,8 @@ def sbymagicrate():
         """)
     characters = cur.fetchall()
     conn.close()
+    if not characters:
+        return render_template('magicbutton.html', error = "No characters found.")
     return render_template('magicbutton.html', characters=characters)
 
 @app.route("/seethelist")
@@ -206,6 +220,8 @@ def seethelist():
     """)
     characters = cur.fetchall()
     conn.close()
+    if not characters:
+        return render_template('charlistbutton.html', error = "No characters found.")
     return render_template('charlist.html', characters=characters)
 
 LINEAGE_OPTIONS = {
